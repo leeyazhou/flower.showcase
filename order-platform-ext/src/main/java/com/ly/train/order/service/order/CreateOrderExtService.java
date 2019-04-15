@@ -16,6 +16,7 @@
 package com.ly.train.order.service.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import com.ly.train.flower.common.annotation.FlowerService;
 import com.ly.train.flower.common.service.Service;
 import com.ly.train.flower.common.service.container.ServiceContext;
 import com.ly.train.order.dao.OrderExtDao;
@@ -25,7 +26,7 @@ import com.ly.train.order.model.OrderExt;
  * @author leeyazhou
  *
  */
-
+@FlowerService
 public class CreateOrderExtService implements Service<OrderExt, String> {
 
   @Autowired
