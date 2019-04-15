@@ -13,32 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.order.service.order;
+package com.ly.train.order.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.Date;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.ly.train.flower.common.annotation.FlowerService;
-import com.ly.train.flower.common.service.Service;
-import com.ly.train.flower.common.service.container.ServiceContext;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import com.ly.train.order.dao.OrderDao;
 import com.ly.train.order.model.OrderExt;
+import com.ly.train.order.util.R;
+import com.ly.train.order.util.Response;
 
 /**
  * @author leeyazhou
  *
  */
-@FlowerService
-public class CreateOrderService implements Service<OrderExt, Long> {
-  private static final Logger logger = LoggerFactory.getLogger(CreateOrderService.class);
+@RestController
+public class IndexController {
+
   @Autowired
   private OrderDao orderDao;
 
-  @Override
-  public Long process(OrderExt message, ServiceContext context) throws Throwable {
-    orderDao.insert(message);
-    logger.info("order : {}", message);
-    return message.getId();
-  }
+  @RequestMapping(value = {"index", "index.html", "/"})
+  public Response<String> index() {
+    OrderExt order = new OrderExt();
+    order.setCreateTime(new Date());
+    order.setOrderNo(UUID.randomUUID().toString().replace("-", ""));
+    order.setUserId(1L);
 
+    orderDao.insert(order);
+    return R.ok();
+  }
 }

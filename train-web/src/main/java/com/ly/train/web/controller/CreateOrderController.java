@@ -18,7 +18,7 @@ package com.ly.train.web.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.ly.train.flower.common.annotation.Flower;
-import com.ly.train.order.model.OrderDTO;
+import com.ly.train.order.model.OrderExt;
 import com.ly.train.web.util.R;
 import com.ly.train.web.util.Response;
 
@@ -32,7 +32,7 @@ import com.ly.train.web.util.Response;
 public class CreateOrderController {
 
   @RequestMapping(value = "createOrder")
-  public Response<String> createOrder(OrderDTO orderDTO) {
+  public Response<String> createOrder(OrderExt orderDTO) {
 
     return R.ok();
   }

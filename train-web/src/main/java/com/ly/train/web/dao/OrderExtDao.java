@@ -13,25 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.order;
+package com.ly.train.web.dao;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import com.ly.train.order.model.OrderExt;
 
 /**
  * @author leeyazhou
  *
  */
-@SpringBootApplication
-@ComponentScan("com.ly.train.order")
-@MapperScan("com.ly.train.order.dao")
-@EnableAutoConfiguration
-public class App {
+public interface OrderExtDao {
 
-  public static void main(String[] args) {
-    SpringApplication.run(App.class, args);
-  }
+  public void insert(OrderExt orderExt);
+
 }

@@ -13,25 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.order;
-
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+/**
+ * 
+ */
+package com.ly.train.order.util;
 
 /**
  * @author leeyazhou
  *
  */
-@SpringBootApplication
-@ComponentScan("com.ly.train.order")
-@MapperScan("com.ly.train.order.dao")
-@EnableAutoConfiguration
-public class App {
+public class R {
 
-  public static void main(String[] args) {
-    SpringApplication.run(App.class, args);
+  public static <T> Response<T> ok(T data) {
+
+    return new Response<>(data);
+  }
+
+  public static <T> Response<T> ok() {
+    return new Response<T>();
+  }
+
+  public static <T> Response<T> error(int code, String msg) {
+    return new Response<>(code, msg);
   }
 }

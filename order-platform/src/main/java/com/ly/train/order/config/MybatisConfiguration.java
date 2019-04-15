@@ -13,25 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.order;
+package com.ly.train.order.config;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import javax.sql.DataSource;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @author leeyazhou
  *
  */
-@SpringBootApplication
-@ComponentScan("com.ly.train.order")
-@MapperScan("com.ly.train.order.dao")
-@EnableAutoConfiguration
-public class App {
+@Configuration
+public class MybatisConfiguration {
 
-  public static void main(String[] args) {
-    SpringApplication.run(App.class, args);
+  @Bean
+  @Autowired
+  public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) throws Exception {
+    SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
+    factoryBean.setDataSource(dataSource);
+    return factoryBean;
   }
 }

@@ -15,26 +15,31 @@
  */
 package com.ly.train.web.service.extorder;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 import com.ly.train.flower.common.annotation.FlowerService;
-import com.ly.train.flower.common.service.Service;
+import com.ly.train.flower.common.annotation.FlowerType;
+import com.ly.train.flower.common.service.Complete;
 import com.ly.train.flower.common.service.container.ServiceContext;
-import com.ly.train.web.dao.ExtOrderDao;
-import com.ly.train.web.model.ExtOrderDTO;
+import com.ly.train.flower.common.service.impl.AbstractService;
+import com.ly.train.flower.common.service.web.Flush;
+import com.ly.train.flower.common.service.web.HttpComplete;
 
 /**
  * @author leeyazhou
  *
  */
-@FlowerService
-public class CreateExtOrderService implements Service<ExtOrderDTO, Boolean> {
-
-  @Autowired
-  private ExtOrderDao extOrderDao;
+@FlowerService(type = FlowerType.AGGREGATE)
+public class EndService extends AbstractService<List<Object>, Object> implements Flush, HttpComplete, Complete {
+  @Override
+  public Object doProcess(List<Object> message, ServiceContext context) throws Throwable {
+    context.getWeb().print(message.toString());
+    System.out.println("聚合服务收到消息：" + message);
+    return message;
+  }
 
   @Override
-  public Boolean process(ExtOrderDTO message, ServiceContext context) throws Throwable {
-    return null;
+  public void onError(Throwable throwable, List<Object> param) {
+    super.onError(throwable, param);
   }
 
 }

@@ -16,13 +16,18 @@
 package com.ly.train.order.model;
 
 import java.io.Serializable;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * @author leeyazhou
  *
  */
-public class OrderDTO implements Serializable {
+public class OrderExt extends Order implements Serializable {
 
   private static final long serialVersionUID = -1976814691006772285L;
 
+  @Override
+  public String toString() {
+    return ToStringBuilder.reflectionToString(this);
+  }
 }

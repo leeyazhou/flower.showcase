@@ -6,7 +6,7 @@
 		<artifactId>flower-showcase</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>order-platform</artifactId>
+	<artifactId>order-platform-ext</artifactId>
 
 	<dependencies>
 		<dependency>

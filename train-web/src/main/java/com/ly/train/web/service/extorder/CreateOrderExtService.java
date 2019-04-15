@@ -13,12 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.web.dao;
+package com.ly.train.web.service.extorder;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import com.ly.train.flower.common.service.Service;
+import com.ly.train.flower.common.service.container.ServiceContext;
+import com.ly.train.order.model.OrderExt;
+import com.ly.train.web.dao.OrderExtDao;
 
 /**
  * @author leeyazhou
  *
  */
-public interface ExtOrderDao {
+
+public class CreateOrderExtService implements Service<OrderExt, String> {
+
+  @Autowired
+  OrderExtDao orderExtDao;
+
+  @Override
+  public String process(OrderExt message, ServiceContext context) throws Throwable {
+    orderExtDao.insert(message);
+    return null;
+  }
+
 
 }
