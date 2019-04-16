@@ -21,8 +21,6 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import com.alibaba.druid.pool.DruidDataSource;
 
 /**
@@ -59,8 +57,6 @@ public class MybatisConfiguration {
   public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) throws Exception {
     SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
     factoryBean.setDataSource(dataSource);
-    Resource resource = new ClassPathResource("classpath:mapper/*.xml");
-    factoryBean.setMapperLocations(new Resource[] {resource});
     return factoryBean;
   }
 }
