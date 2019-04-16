@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ly.train</groupId>
-	<artifactId>flower-showcase</artifactId>
+	<artifactId>flower.showcase</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -16,10 +16,10 @@
 		<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
 	</properties>
 	<modules>
-		<module>order-platform</module>
-		<module>train-web</module>
-		<module>order-api</module>
-		<module>order-platform-ext</module>
+		<module>order.platform</module>
+		<module>train.web</module>
+		<module>order.model</module>
+		<module>order.platform.ext</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
