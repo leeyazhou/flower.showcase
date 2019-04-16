@@ -20,11 +20,6 @@
 		</dependency>
 		<dependency>
 			<groupId>com.ly.train</groupId>
-			<artifactId>order.model.ext</artifactId>
-			<version>${parent.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.ly.train</groupId>
 			<artifactId>flower.web</artifactId>
 		</dependency>
 	</dependencies>

@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.order.model.ext;
+package com.ly.train.order.model;
 
 import java.io.Serializable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import com.ly.train.order.model.Order;
 
 /**
  * @author leeyazhou
@@ -26,7 +25,6 @@ import com.ly.train.order.model.Order;
 public class OrderExt extends Order implements Serializable {
 
   private static final long serialVersionUID = 1L;
-  private String goods;
   private String to;
   private String from;
   private String remark;
@@ -65,18 +63,6 @@ public class OrderExt extends Order implements Serializable {
 
   public void setRemark(String remark) {
     this.remark = remark;
-  }
-
-
-
-  public String getGoods() {
-    return goods;
-  }
-
-
-
-  public void setGoods(String goods) {
-    this.goods = goods;
   }
 
 

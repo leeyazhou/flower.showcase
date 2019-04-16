@@ -18,6 +18,7 @@ package com.ly.train.web.service;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.alibaba.fastjson.JSONObject;
 import com.ly.train.flower.common.annotation.FlowerService;
 import com.ly.train.flower.common.annotation.FlowerType;
 import com.ly.train.flower.common.service.Complete;
@@ -25,6 +26,8 @@ import com.ly.train.flower.common.service.container.ServiceContext;
 import com.ly.train.flower.common.service.impl.AbstractService;
 import com.ly.train.flower.common.service.web.Flush;
 import com.ly.train.flower.common.service.web.HttpComplete;
+import com.ly.train.web.util.R;
+import com.ly.train.web.util.Response;
 
 /**
  * @author leeyazhou
@@ -33,9 +36,12 @@ import com.ly.train.flower.common.service.web.HttpComplete;
 @FlowerService(type = FlowerType.AGGREGATE)
 public class EndService extends AbstractService<List<Object>, Object> implements Flush, HttpComplete, Complete {
   private Logger logger = LoggerFactory.getLogger(EndService.class);
+
   @Override
   public Object doProcess(List<Object> message, ServiceContext context) throws Throwable {
-    context.getWeb().print(message.toString());
+    Response<List<Object>> res = R.ok(message);
+    String ret = JSONObject.toJSONString(res, true);
+    context.getWeb().print(ret);
     logger.info("聚合服务收到消息：" + message);
     return message;
   }

@@ -15,6 +15,7 @@
  */
 package com.ly.train.order.ext;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,6 +30,7 @@ import com.ly.train.flower.web.spring.context.FlowerComponentScan;
 @ComponentScan("com.ly.train.order.ext")
 @FlowerComponentScan("com.ly.train.order.ext")
 @EnableAutoConfiguration
+@MapperScan("com.ly.train.order.ext.dao")
 public class OrderPlatformExtApplication {
 
   public static void main(String[] args) {

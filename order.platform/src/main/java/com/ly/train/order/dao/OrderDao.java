@@ -15,7 +15,6 @@
  */
 package com.ly.train.order.dao;
 
-import org.apache.ibatis.annotations.Insert;
 import com.ly.train.order.model.Order;
 
 /**
@@ -24,6 +23,5 @@ import com.ly.train.order.model.Order;
  */
 public interface OrderDao {
 
-  @Insert("insert into fl_order ( order_no, user_id, create_time) values ( #{orderNo}, #{userId}, #{createTime})")
   public void insert(Order order);
 }

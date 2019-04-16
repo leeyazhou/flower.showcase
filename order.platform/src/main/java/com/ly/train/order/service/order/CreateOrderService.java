@@ -40,6 +40,7 @@ public class CreateOrderService implements Service<Order, Boolean> {
       orderDao.insert(message);
       logger.info("创建订单 : {}", message);
     } catch (Exception e) {
+      logger.error("", e);
       return Boolean.FALSE;
     }
     return Boolean.TRUE;

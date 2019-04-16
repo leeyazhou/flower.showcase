@@ -20,7 +20,6 @@
 		<module>train.web</module>
 		<module>order.model</module>
 		<module>order.platform.ext</module>
-		<module>order.model.ext</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>

@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.order.ext.dao;
+package com.ly.train.web.service;
 
-import org.apache.ibatis.annotations.Insert;
-import com.ly.train.order.model.OrderExt;
+import java.util.UUID;
+import org.springframework.stereotype.Service;
 
 /**
  * @author leeyazhou
  *
  */
-public interface OrderExtDao {
+@Service
+public class OrderNoService {
 
-  @Insert("insert into fl_order_ext(order_no, create_time, `from`, `to` , remark) value(#{orderNo}, #{createTime}, #{from}, #{to}, #{remark})")
-  public void insert(OrderExt orderExt);
-
+  public String generateOrderNo() {
+    return UUID.randomUUID().toString().replace("-", "");
+  }
 }

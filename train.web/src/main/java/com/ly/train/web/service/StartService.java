@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 import com.ly.train.flower.common.annotation.FlowerService;
 import com.ly.train.flower.common.service.container.ServiceContext;
 import com.ly.train.flower.common.service.impl.AbstractService;
-import com.ly.train.order.model.ext.OrderExt;
+import com.ly.train.order.model.OrderExt;
 
 /**
  * @author leeyazhou
