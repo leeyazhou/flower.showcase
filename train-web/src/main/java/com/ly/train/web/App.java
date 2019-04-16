@@ -19,6 +19,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import com.ly.train.flower.web.spring.context.FlowerComponentScan;
 
 /**
  * @author leeyazhou
@@ -26,6 +27,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @ComponentScan("com.ly.train.web")
+@FlowerComponentScan("com.ly.train.web.service")
 @EnableAutoConfiguration
 public class App {
 

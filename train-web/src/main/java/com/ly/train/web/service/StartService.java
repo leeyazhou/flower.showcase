@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.web.service.extorder;
+package com.ly.train.web.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.ly.train.flower.common.annotation.FlowerService;
 import com.ly.train.flower.common.service.container.ServiceContext;
 import com.ly.train.flower.common.service.impl.AbstractService;
 import com.ly.train.order.model.OrderExt;
@@ -23,7 +26,9 @@ import com.ly.train.order.model.OrderExt;
  * @author leeyazhou
  *
  */
+@FlowerService
 public class StartService extends AbstractService<OrderExt, OrderExt> {
+  static final Logger logger = LoggerFactory.getLogger(EndService.class);
 
   @Override
   public OrderExt doProcess(OrderExt message, ServiceContext context) {

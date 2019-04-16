@@ -37,8 +37,8 @@ public class CreateOrderService implements Service<OrderExt, Long> {
   @Override
   public Long process(OrderExt message, ServiceContext context) throws Throwable {
     orderDao.insert(message);
-    logger.info("order : {}", message);
-    return message.getId();
+    logger.info("创建订单 : {}", message);
+    return 100L;
   }
 
 }

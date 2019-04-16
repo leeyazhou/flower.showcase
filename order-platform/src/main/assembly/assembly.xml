@@ -31,8 +31,7 @@
 			<directory>src/main/resources/conf</directory>
 			<outputDirectory>conf</outputDirectory>
 			<includes>
-				<include>*.yml</include>
-				<include>conf/**</include>
+				<include>**/*</include>
 			</includes>
 		</fileSet>
 		<fileSet>

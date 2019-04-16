@@ -16,7 +16,7 @@
 /**
  * 
  */
-package com.ly.train.order.util;
+package com.ly.train.order.ext.util;
 
 /**
  * @author leeyazhou

@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.order.service.order;
+package com.ly.train.order.ext.service.order;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.ly.train.flower.common.annotation.FlowerService;
 import com.ly.train.flower.common.service.Service;
 import com.ly.train.flower.common.service.container.ServiceContext;
-import com.ly.train.order.dao.OrderExtDao;
+import com.ly.train.order.ext.dao.OrderExtDao;
 import com.ly.train.order.model.OrderExt;
 
 /**
@@ -28,14 +30,15 @@ import com.ly.train.order.model.OrderExt;
  */
 @FlowerService
 public class CreateOrderExtService implements Service<OrderExt, String> {
-
+  private static final Logger logger = LoggerFactory.getLogger(CreateOrderExtService.class);
   @Autowired
   OrderExtDao orderExtDao;
 
   @Override
   public String process(OrderExt message, ServiceContext context) throws Throwable {
     orderExtDao.insert(message);
-    return null;
+    logger.info("创建订单：{}", message);
+    return "abc";
   }
 
 

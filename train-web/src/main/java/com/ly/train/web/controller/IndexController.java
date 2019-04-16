@@ -13,27 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/**
- * 
- */
-package com.ly.train.order.util;
+package com.ly.train.web.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.ly.train.web.util.R;
+import com.ly.train.web.util.Response;
 
 /**
  * @author leeyazhou
  *
  */
-public class R {
+@RestController
+public class IndexController {
 
-  public static <T> Response<T> ok(T data) {
-
-    return new Response<>(data);
-  }
-
-  public static <T> Response<T> ok() {
-    return new Response<T>();
-  }
-
-  public static <T> Response<T> error(int code, String msg) {
-    return new Response<>(code, msg);
+  @RequestMapping(value = {"/", "index.html", "index", "index.htm"})
+  public Response<String> index() {
+    return R.ok();
   }
 }

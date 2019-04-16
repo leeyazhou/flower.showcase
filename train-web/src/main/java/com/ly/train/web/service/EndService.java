@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ly.train.web.service.extorder;
+package com.ly.train.web.service;
 
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.ly.train.flower.common.annotation.FlowerService;
 import com.ly.train.flower.common.annotation.FlowerType;
 import com.ly.train.flower.common.service.Complete;
@@ -30,10 +32,11 @@ import com.ly.train.flower.common.service.web.HttpComplete;
  */
 @FlowerService(type = FlowerType.AGGREGATE)
 public class EndService extends AbstractService<List<Object>, Object> implements Flush, HttpComplete, Complete {
+  private Logger logger = LoggerFactory.getLogger(EndService.class);
   @Override
   public Object doProcess(List<Object> message, ServiceContext context) throws Throwable {
     context.getWeb().print(message.toString());
-    System.out.println("聚合服务收到消息：" + message);
+    logger.info("聚合服务收到消息：" + message);
     return message;
   }
 

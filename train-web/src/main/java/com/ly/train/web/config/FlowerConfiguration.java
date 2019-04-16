@@ -30,7 +30,7 @@ public class FlowerConfiguration {
   @Bean
   public FlowerFactory flowerFactory() {
     FlowerFactory flowerFactory = new SpringFlowerFactory();
-    flowerFactory.init();
+    flowerFactory.start();
     return flowerFactory;
   }
 }

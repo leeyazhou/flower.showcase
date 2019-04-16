@@ -16,6 +16,7 @@
 package com.ly.train.order.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -30,6 +31,9 @@ public class Order implements Serializable {
   private Long id;
   private String orderNo;
   private Long userId;
+  private BigDecimal price;
+  private Integer num;
+  private Integer orderStatus;
   private Date createTime;
   private Date updateTime;
 
@@ -63,6 +67,30 @@ public class Order implements Serializable {
 
   public void setCreateTime(Date createTime) {
     this.createTime = createTime;
+  }
+
+  public BigDecimal getPrice() {
+    return price;
+  }
+
+  public void setPrice(BigDecimal price) {
+    this.price = price;
+  }
+
+  public Integer getNum() {
+    return num;
+  }
+
+  public void setNum(Integer num) {
+    this.num = num;
+  }
+
+  public Integer getOrderStatus() {
+    return orderStatus;
+  }
+
+  public void setOrderStatus(Integer orderStatus) {
+    this.orderStatus = orderStatus;
   }
 
   public Date getUpdateTime() {

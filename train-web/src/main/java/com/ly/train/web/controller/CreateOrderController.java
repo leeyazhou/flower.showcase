@@ -15,12 +15,17 @@
  */
 package com.ly.train.web.controller;
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.UUID;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.ly.train.flower.common.annotation.Flower;
+import com.ly.train.flower.web.spring.FlowerController;
 import com.ly.train.order.model.OrderExt;
-import com.ly.train.web.util.R;
-import com.ly.train.web.util.Response;
+import com.ly.train.web.service.StartService;
 
 /**
  * @author leeyazhou
@@ -28,12 +33,24 @@ import com.ly.train.web.util.Response;
  */
 @RestController
 @RequestMapping("/order/")
-@Flower(value = "createOrderFlow", serviceName = "createOrder", flowNumber = 32)
-public class CreateOrderController {
+@Flower(value = "createOrderFlow", flowNumber = 8)
+public class CreateOrderController extends FlowerController {
 
   @RequestMapping(value = "createOrder")
-  public Response<String> createOrder(OrderExt orderDTO) {
-
-    return R.ok();
+  public void createOrder(OrderExt orderExt, HttpServletRequest req) throws IOException {
+    orderExt.setOrderNo(UUID.randomUUID().toString().replace("-", ""));
+    orderExt.setCreateTime(new Date());
+    logger.info("收到请求:{}", orderExt);
+    doProcess(orderExt, req);
   }
+
+  @Override
+  public void buildFlower() {
+    getServiceFlow().buildFlow(StartService.class.getSimpleName(), Arrays.asList("CreateOrderService", "CreateOrderExtService"));
+    getServiceFlow().buildFlow(Arrays.asList("CreateOrderService", "CreateOrderExtService"), "EndService");
+    getServiceFlow().build();
+  }
+
+
+
 }

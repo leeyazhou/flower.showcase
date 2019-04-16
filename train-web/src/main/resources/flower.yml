@@ -1,7 +1,7 @@
 name: "LocalFlower"
-basePackage: com.ly.train.flower
+basePackage: com.ly.train.web
+host: 127.0.0.1
+port: 25006
 
 registry:
-   - url: "flower://127.0.0.1:8096"
-
-basePackage: com.ly.train.web
+   - url: "flower://127.0.0.1:8096?application=LocalFlower"

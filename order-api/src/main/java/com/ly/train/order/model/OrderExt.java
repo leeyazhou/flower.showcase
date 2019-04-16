@@ -16,6 +16,7 @@
 package com.ly.train.order.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
@@ -24,7 +25,24 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  */
 public class OrderExt extends Order implements Serializable {
 
-  private static final long serialVersionUID = -1976814691006772285L;
+  private String goods;
+  private String to;
+  private String from;
+  private String remark;
+
+
+
+  public String getGoods() {
+    return goods;
+  }
+
+
+
+  public void setGoods(String goods) {
+    this.goods = goods;
+  }
+
+
 
   @Override
   public String toString() {
