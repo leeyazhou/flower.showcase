@@ -37,6 +37,11 @@
 			<version>${parent.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>com.ly.train</groupId>
+			<artifactId>order.model.ext</artifactId>
+			<version>${parent.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 		</dependency>

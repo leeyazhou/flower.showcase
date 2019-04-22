@@ -16,7 +16,7 @@
 package com.ly.train.order.ext.dao;
 
 import org.apache.ibatis.annotations.Insert;
-import com.ly.train.order.model.OrderExt;
+import com.ly.train.order.ext.model.OrderExt;
 
 /**
  * @author leeyazhou

@@ -22,7 +22,7 @@ import com.ly.train.flower.common.annotation.FlowerService;
 import com.ly.train.flower.common.service.Service;
 import com.ly.train.flower.common.service.container.ServiceContext;
 import com.ly.train.order.ext.dao.OrderExtDao;
-import com.ly.train.order.model.OrderExt;
+import com.ly.train.order.ext.model.OrderExt;
 
 /**
  * @author leeyazhou

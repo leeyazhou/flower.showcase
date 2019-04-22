@@ -41,7 +41,7 @@ public class EndService extends AbstractService<List<Object>, Object> implements
   public Object doProcess(List<Object> message, ServiceContext context) throws Throwable {
     Response<List<Object>> res = R.ok(message);
     String ret = JSONObject.toJSONString(res, true);
-    context.getWeb().print(ret);
+    context.getWeb().printJSON(ret);
     logger.info("聚合服务收到消息：" + message);
     return message;
   }
