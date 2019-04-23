@@ -3,4 +3,4 @@ basePackage: com.ly.train.order.service
 host: 127.0.0.1
 port: 25004
 registry:
-   - url:  "flower://127.0.0.1:8096?application=FlowerCenter"
+   - url:  "flower://10.100.216.147:8096?application=FlowerCenter"
