@@ -33,9 +33,9 @@ public class MybatisConfiguration {
   public DataSource dataSourceOne() {
     DruidDataSource dataSource = new DruidDataSource();
     Properties properties = new Properties();
-    properties.put("druid.url", "jdbc:mysql://localhost:3306/flower?characterEncoding=UTF-8");
+    properties.put("druid.url", "jdbc:mysql://10.100.216.147:3306/flower?characterEncoding=UTF-8");
     properties.put("druid.username", "root");
-    properties.put("druid.password", "kuche123");
+    properties.put("druid.password", "UJ9FeAm3Yc@#E%IH8dLj6guyr5K&u#J3");
     properties.put("druid.initialSize", "8");
     properties.put("druid.minIdle", "8");
     properties.put("druid.maxActive", "32");
