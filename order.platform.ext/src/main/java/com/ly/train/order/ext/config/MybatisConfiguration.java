@@ -51,7 +51,6 @@ public class MybatisConfiguration {
     return dataSource;
   }
 
-
   @Bean
   @Autowired
   public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) throws Exception {

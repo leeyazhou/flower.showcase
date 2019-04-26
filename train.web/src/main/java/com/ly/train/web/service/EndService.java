@@ -34,7 +34,8 @@ import com.ly.train.web.util.Response;
  *
  */
 @FlowerService(type = FlowerType.AGGREGATE)
-public class EndService extends AbstractService<List<Object>, Object> implements Flush, HttpComplete, Complete {
+public class EndService extends AbstractService<List<Object>, Object> implements Flush,
+                                                                     HttpComplete, Complete {
   private Logger logger = LoggerFactory.getLogger(EndService.class);
 
   @Override

@@ -28,14 +28,14 @@ public class Order implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  private Long id;
-  private String orderNo;
-  private Long userId;
-  private BigDecimal price;
-  private Integer num;
-  private Integer orderStatus;
-  private Date createTime;
-  private Date updateTime;
+  private Long              id;
+  private String            orderNo;
+  private Long              userId;
+  private BigDecimal        price;
+  private Integer           num;
+  private Integer           orderStatus;
+  private Date              createTime;
+  private Date              updateTime;
 
   public Long getId() {
     return id;
@@ -109,6 +109,5 @@ public class Order implements Serializable {
   public String toString() {
     return ToStringBuilder.reflectionToString(this);
   }
-
 
 }

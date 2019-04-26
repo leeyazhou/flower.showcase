@@ -27,7 +27,7 @@ import com.ly.train.web.util.Response;
 @RestController
 public class IndexController {
 
-  @RequestMapping(value = {"/", "index.html", "index", "index.htm"})
+  @RequestMapping(value = { "/", "index.html", "index", "index.htm" })
   public Response<String> index() {
     return R.ok();
   }

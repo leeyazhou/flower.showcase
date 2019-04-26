@@ -32,7 +32,7 @@ import com.ly.train.order.ext.model.OrderExt;
 public class CreateOrderExtService implements Service<OrderExt, Boolean> {
   private static final Logger logger = LoggerFactory.getLogger(CreateOrderExtService.class);
   @Autowired
-  OrderExtDao orderExtDao;
+  OrderExtDao                 orderExtDao;
 
   @Override
   public Boolean process(OrderExt message, ServiceContext context) throws Throwable {
@@ -45,6 +45,5 @@ public class CreateOrderExtService implements Service<OrderExt, Boolean> {
     }
     return Boolean.TRUE;
   }
-
 
 }

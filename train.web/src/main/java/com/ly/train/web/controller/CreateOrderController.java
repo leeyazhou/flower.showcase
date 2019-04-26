@@ -51,11 +51,10 @@ public class CreateOrderController extends FlowerController {
   @Override
   public void buildFlower() {
     getServiceFlow().buildFlow(StartService.class.getSimpleName(),
-        Arrays.asList("CreateOrderService", "CreateOrderExtService"));
-    getServiceFlow().buildFlow(Arrays.asList("CreateOrderService", "CreateOrderExtService"), "EndService");
+      Arrays.asList("CreateOrderService", "CreateOrderExtService"));
+    getServiceFlow().buildFlow(Arrays.asList("CreateOrderService", "CreateOrderExtService"),
+      "EndService");
     getServiceFlow().build();
   }
-
-
 
 }

@@ -26,47 +26,33 @@ import com.ly.train.order.model.Order;
 public class OrderExt extends Order implements Serializable {
 
   private static final long serialVersionUID = 1L;
-  private String to;
-  private String from;
-  private String remark;
-
-
+  private String            to;
+  private String            from;
+  private String            remark;
 
   public String getTo() {
     return to;
   }
 
-
-
   public void setTo(String to) {
     this.to = to;
   }
-
-
 
   public String getFrom() {
     return from;
   }
 
-
-
   public void setFrom(String from) {
     this.from = from;
   }
-
-
 
   public String getRemark() {
     return remark;
   }
 
-
-
   public void setRemark(String remark) {
     this.remark = remark;
   }
-
-
 
   @Override
   public String toString() {
