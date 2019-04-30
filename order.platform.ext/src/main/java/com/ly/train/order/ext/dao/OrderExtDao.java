@@ -20,7 +20,7 @@ import com.ly.train.order.ext.model.OrderExt;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 public interface OrderExtDao {
 

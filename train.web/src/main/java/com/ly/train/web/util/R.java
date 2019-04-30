@@ -20,7 +20,7 @@ package com.ly.train.web.util;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 public class R {
 

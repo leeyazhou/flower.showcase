@@ -20,7 +20,7 @@ import com.ly.train.order.model.Order;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 public interface OrderDao {
 

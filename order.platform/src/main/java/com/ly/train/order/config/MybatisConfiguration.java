@@ -25,7 +25,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 @Configuration
 public class MybatisConfiguration {

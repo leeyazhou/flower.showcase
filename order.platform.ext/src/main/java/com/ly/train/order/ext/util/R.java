@@ -20,7 +20,7 @@ package com.ly.train.order.ext.util;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 public class R {
 
