@@ -26,13 +26,13 @@ import com.ly.train.order.model.Order;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 @FlowerService
 public class CreateOrderService implements Service<Order, Boolean> {
   private static final Logger logger = LoggerFactory.getLogger(CreateOrderService.class);
   @Autowired
-  private OrderDao            orderDao;
+  private OrderDao orderDao;
 
   @Override
   public Boolean process(Order message, ServiceContext context) throws Throwable {

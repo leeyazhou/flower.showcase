@@ -20,18 +20,17 @@ package com.ly.train.order.util;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 public class Response<T> {
 
-  private int    code = 0;
+  private int code = 0;
 
-  private String msg  = "success";
+  private String msg = "success";
 
-  private T      data;
+  private T data;
 
-  public Response() {
-  }
+  public Response() {}
 
   public Response(int code, String msg) {
     this.code = code;

@@ -24,7 +24,7 @@ import com.ly.train.order.ext.model.OrderExt;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 @FlowerService
 public class StartService extends AbstractService<OrderExt, OrderExt> {
@@ -33,11 +33,6 @@ public class StartService extends AbstractService<OrderExt, OrderExt> {
   @Override
   public OrderExt doProcess(OrderExt message, ServiceContext context) {
     return message;
-  }
-
-  @Override
-  public void onError(Throwable throwable, OrderExt orderExt) {
-    super.onError(throwable, orderExt);
   }
 
 }

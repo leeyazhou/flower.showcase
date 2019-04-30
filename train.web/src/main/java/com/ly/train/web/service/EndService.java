@@ -31,11 +31,10 @@ import com.ly.train.web.util.Response;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 @FlowerService(type = FlowerType.AGGREGATE)
-public class EndService extends AbstractService<List<Object>, Object> implements Flush,
-                                                                     HttpComplete, Complete {
+public class EndService extends AbstractService<List<Object>, Object> implements Flush, HttpComplete, Complete {
   private Logger logger = LoggerFactory.getLogger(EndService.class);
 
   @Override
@@ -45,11 +44,6 @@ public class EndService extends AbstractService<List<Object>, Object> implements
     context.getWeb().printJSON(ret);
     logger.info("聚合服务收到消息：" + message);
     return message;
-  }
-
-  @Override
-  public void onError(Throwable throwable, List<Object> param) {
-    super.onError(throwable, param);
   }
 
 }

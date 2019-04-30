@@ -21,14 +21,14 @@ import com.ly.train.order.model.Order;
 
 /**
  * @author leeyazhou
- *
+ * 
  */
 public class OrderExt extends Order implements Serializable {
 
   private static final long serialVersionUID = 1L;
-  private String            to;
-  private String            from;
-  private String            remark;
+  private String to;
+  private String from;
+  private String remark;
 
   public String getTo() {
     return to;
